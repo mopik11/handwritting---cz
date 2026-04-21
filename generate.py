@@ -137,11 +137,14 @@ def generate_handwriting(text, model_path="handwriting_model_epoch_40.pt", norm_
                 x_t[0, 2] = eos
 
         # Posun aktuálního slova doprava a napojení do hlavního plátna
+        max_x = global_x_offset
         for pt in generated_points:
             pt[0] += global_x_offset
+            if pt[0] > max_x:
+                max_x = pt[0]
             all_generated_points.append(pt)
             
-        global_x_offset += abs_x + 50.0 # Mezera mezi slovy
+        global_x_offset = max_x + 50.0 # Mezera mezi slovy zaručující nulový překryv
         # Zdvihnout pero mezi slovy
         all_generated_points.append([global_x_offset, 0.0, 1.0])
 
