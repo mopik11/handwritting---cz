@@ -1,4 +1,5 @@
-# Generátor ručně psaného písma (Handwriting Synthesis)
+# handwritting---cz
+## Generátor ručně psaného písma (Handwriting Synthesis)
 
 Tento projekt implementuje architekturu z paperu **"Generating Sequences With Recurrent Neural Networks" (Graves, 2013)**. 
 Řešení kombinuje **LSTM** a **Mixture Density Network (MDN)** vrstvy, a implementuje tzv. *Window Layer (Attention)*, který umožňuje síti při produkování dynamicky generovat křivky tahu pomocí textového vstupu (jako podkladu).
